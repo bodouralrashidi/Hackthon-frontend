@@ -124,3 +124,38 @@ btn {
 #bynckos {
   background-color: tomato;
 }
+.icon {
+  margin-right: 8px;
+}
+.signinMargin {
+  margin: 50px;
+}
+.cardPageContainer {
+  margin: auto;
+  width: 100%;
+  padding-top: 80px;
+}
+.card-page {
+  width: 50%;
+  margin: auto;
+}
+.loginbutt {
+  margin-left: 100px;
+}
+.cardBalance {
+  margin: 90px;
+}
+.redeemDiv {
+  width: 100%;
+  margin-top: 40px;
+  margin-left: 20%;
+}
+.redeemButt {
+  width: 190px;
+}
+
+@media only screen and (max-width: 500px) {
+  #sidebar {
+    display: none;
+  }
+}

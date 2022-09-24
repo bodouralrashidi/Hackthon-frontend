@@ -11,7 +11,7 @@ import Link from "next/link";
 
 const Sidebar = () => {
   return (
-    <div className="md:w-2/12 w-6/12 h-screen shadow-2xl">
+    <div id="sidebar" className="md:w-2/12 w-6/12 h-screen shadow-2xl">
       <div className=" border-b py-3 mt-1 flex justify-around ">
         <p className="text-xl  font-semibold">Bank</p>
         <p>|</p>
@@ -24,6 +24,24 @@ const Sidebar = () => {
             <div className="flex p-3 text-gray-700  space-x-4 0 hover:bg-gray-50 hover:text-blue-600  cursor-pointer  ">
               <DonutLargeIcon className=" text-gray-300" />
               <p className=" ">Main Menu</p>
+            </div>
+          </Link>
+          <Link href="/new">
+            <div className="flex p-3 text-gray-700  space-x-4 0 hover:bg-gray-50 hover:text-blue-600  cursor-pointer  ">
+              <DonutLargeIcon className=" text-gray-300" />
+              <p className=" ">New Card</p>
+            </div>
+          </Link>
+          <Link href="/wishlist">
+            <div className="flex p-3 text-gray-700  space-x-4 0 hover:bg-gray-50 hover:text-blue-600  cursor-pointer  ">
+              <DonutLargeIcon className=" text-gray-300" />
+              <p className=" ">Wishlist</p>
+            </div>
+          </Link>
+          <Link href="/redeem">
+            <div className="flex p-3 text-gray-700  space-x-4 0 hover:bg-gray-50 hover:text-blue-600  cursor-pointer  ">
+              <DonutLargeIcon className=" text-gray-300" />
+              <p className=" ">Redeem</p>
             </div>
           </Link>
           <Link href="/page2">

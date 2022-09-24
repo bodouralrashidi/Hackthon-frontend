@@ -18,7 +18,7 @@ function name(props) {
       setCardData((x) => {
         return { ...x, type: ev.target.value };
       });
-    } else if (tag == "text") {
+    } else {
       setCardData((x) => {
         return { ...x, [ev.target.name]: ev.target.value };
       });
@@ -29,8 +29,10 @@ function name(props) {
     ev.preventDefault();
 
     if (props.userData.wallet >= cardData.balance && cardData.balance != "") {
+      //fetch
       toast.success("Your card is ready!");
     } else {
+      //fetch
       toast.error("You Can't!");
     }
   }
@@ -59,6 +61,7 @@ function name(props) {
             <input
               id="balance"
               name="balance"
+              type="number"
               onChange={handleChange}
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Enter the value (KWD)

@@ -18,14 +18,14 @@ export default function Home({ userData }) {
               Hey, {userData.name}
             </p>
           </div>
-          <h2 className="text-4xl mt-5">Your Wallets</h2>
+          <h2 className="text-3xl mt-5 text-gray-500 mb-1">Your Wallets</h2>
           <div className="flex space-x-3">
             {myCards.map((x) => {
               return <Card title={x.type} balance={x.balance} icon={0} />;
             })}
           </div>
-          <h2 className="text-4xl mt-5">Basic Stats</h2>
-          {/* <div className="space-x-4 mt-5 mb-5 flex ">
+          {/* <h2 className="text-4xl mt-5">Basic Stats</h2>
+          <div className="space-x-4 mt-5 mb-5 flex ">
             <CardItem name="Profit" icon="fa-solid fa-money-bill" />
             <CardItem name="Profit" icon="fa-solid fa-money-bill" />
             <CardItem name="Profit" icon="fa-solid fa-money-bill" />

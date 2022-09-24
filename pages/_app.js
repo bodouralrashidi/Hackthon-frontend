@@ -7,10 +7,11 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
+  //fetch
   const [user, setUser] = useState({
     loggedIn: true,
     name: "Athbi Hamdi Almutairi",
-    monthly_payout: 1500,
+    nthly_payout: 1500,
     wallet: 350,
     cards: [
       { type: "Credit Card", balance: 104.4 },
