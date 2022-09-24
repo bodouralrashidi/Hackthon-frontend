@@ -39,7 +39,7 @@ const Card = (props) => {
     <div
       className={`transform hover:scale-110 cursor-pointer transition delay-100 w-3/12  p-2 py-4 shadow-xl  border rounded-xl bg-gradient-to-r ${colorSel}`}
     >
-      <div className="flex justify-between">
+      <div className="flex justify-between rounded-full">
         <div className="text-white">{props.title}</div>
         <div className=" w-10  h-10 flex items-center justify-center  bg-gray-300 rounded-xl m-1  bg-opacity-30">
           {arrayIcon[props.icon]}

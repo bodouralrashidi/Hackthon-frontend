@@ -7,7 +7,17 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState({
+    loggedIn: true,
+    name: "Athbi Hamdi Almutairi",
+    monthly_payout: 1500,
+    wallet: 350,
+    cards: [
+      { type: "Credit Card", balance: 104.4 },
+      { type: "Debit Card", balance: 2000 },
+      { type: "Crypto Card", balance: 50 },
+    ],
+  });
   useEffect(() => {}, []);
   const router = useRouter();
 
@@ -26,9 +36,9 @@ function MyApp({ Component, pageProps }) {
       <div className="flex w-screen h-screen">
         <Sidebar />
         <div className="w-screen ">
-          <Header />
-          {user ? (
-            <Component user={user} {...pageProps} />
+          <Header userData={user} />
+          {user.loggedIn ? (
+            <Component userData={user} {...pageProps} />
           ) : (
             <div>Please login</div>
           )}
