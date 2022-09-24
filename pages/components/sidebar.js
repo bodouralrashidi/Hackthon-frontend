@@ -50,6 +50,12 @@ const Sidebar = () => {
               <p className=" ">Page template</p>
             </div>
           </Link>
+          <Link href="/p2p">
+            <div className="flex p-3 text-gray-700  space-x-4 0 hover:bg-gray-50 hover:text-blue-600  cursor-pointer  ">
+              <DonutLargeIcon className=" text-gray-300" />
+              <p className=" ">Loan</p>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
