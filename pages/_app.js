@@ -5,21 +5,30 @@ import Sidebar from "./components/sidebar";
 import Header from "./components/Header";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import userStore from "../pages/store/userStore";
 
 function MyApp({ Component, pageProps }) {
   //fetch
-  const [user, setUser] = useState({
-    loggedIn: true,
-    name: "Athbi Hamdi Almutairi",
-    nthly_payout: 1500,
-    wallet: 350,
-    cards: [
-      { type: "Credit Card", balance: 104.4 },
-      { type: "Debit Card", balance: 2000 },
-      { type: "Crypto Card", balance: 50 },
-    ],
-  });
-  useEffect(() => {}, []);
+
+  // const Currentuser = userStore.users.filter((Element) => {
+  //   Element._id === userStore.CurrentUserId;
+  //   console.log(Element, "element");
+  // });
+
+  // console.log([...userStore.currentUserData.cards], "current user data");
+
+  const [user, setUser] = useState({});
+  useEffect(async () => {
+    await userStore.getUser(userStore.CurrentUserId);
+
+    setUser({
+      loggedIn: true,
+      name: userStore.currentUserData.name,
+      nthly_payout: 1500,
+      wallet: 350,
+      cards: [...userStore.currentUserData.cards],
+    });
+  }, []);
   const router = useRouter();
 
   return (

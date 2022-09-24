@@ -56,7 +56,7 @@ function name(props) {
                   <td class="py-4 px-6 text-red-500">{x.saving}</td>
                   <td class="py-4 px-6 ">{x.price} KWD</td>
                   <td class="py-4 px-6 text-green-500">
-                    {x.price / x.saving} Month
+                    {x.price / x.saving} per Month
                   </td>
                 </tr>
               );
@@ -128,7 +128,7 @@ function name(props) {
               required
             />
           </div>
-          <h1 className="mt-3">Time : {wish.price / wish.saving} Month</h1>
+          <h1 className="mt-3">Time : {wish.price / wish.saving} per Month</h1>
           <button
             type="submit"
             name="saving"

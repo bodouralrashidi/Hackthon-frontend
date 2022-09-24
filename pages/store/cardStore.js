@@ -7,15 +7,12 @@ class CardStore {
   }
   cards = [];
 
-  createCard = async (newCard,userId) => {
+  createCard = async (newCard, userId) => {
     try {
       const response = await instance.post(`/createCard/${userId}`, newCard);
       this.cards.push(response.data);
     } catch (error) {
-      console.log(
-        "🚀 createcard",
-        error
-      );
+      console.log("🚀 createcard", error);
     }
   };
 
@@ -23,17 +20,14 @@ class CardStore {
     try {
       const response = await instance.get("/cards");
       this.cards = response.data;
-
     } catch (error) {
       console.log("cards -> fetchCards -> error", error);
     }
   };
-
-  
 }
 
 const cardStore = new CardStore();
-cardStore.fetchCategories();
+cardStore.fetchCards();
 export default cardStore;
 
 // axios.METHOD(URL, BODY)

@@ -6,16 +6,14 @@ class UserStore {
     makeAutoObservable(this);
   }
   users = [];
-
-  createCard = async (newCard,userId) => {
+  currentUserData = "";
+  CurrentUserId = "632edb56d8c3d0ba519db678";
+  createCard = async (newCard, userId) => {
     try {
       const response = await instance.post(`/createCard/${userId}`, newCard);
       this.cards.push(response.data);
     } catch (error) {
-      console.log(
-        "🚀 createcard",
-        error
-      );
+      console.log("🚀 createcard", error);
     }
   };
 
@@ -23,7 +21,15 @@ class UserStore {
     try {
       const response = await instance.get("/users");
       this.users = response.data;
-
+    } catch (error) {
+      console.log("users -> users -> error", error);
+    }
+  };
+  getUser = async (id) => {
+    try {
+      const response = await instance.get(`/user/${id}`);
+      this.currentUserData = response.data;
+      console.log(this.currentUserData);
     } catch (error) {
       console.log("users -> users -> error", error);
     }
@@ -31,7 +37,7 @@ class UserStore {
 }
 
 const userStore = new UserStore();
-userStore .fetchCards();
+userStore.fetchUser();
 export default userStore;
 
 // axios.METHOD(URL, BODY)

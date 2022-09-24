@@ -4,9 +4,11 @@ import Header from "./components/Header";
 import Card from "./components/Card";
 import CardItem from "./components/CardsIcon";
 import TransactionList from "./components/TransactionList";
-
+import userStore from "./store/userStore";
 export default function Home({ userData }) {
   console.log(userData.cards);
+  // const cards = userStore.currentUserData.cards
+  // console.log(cards)
   const myCards = userData.cards;
   return (
     <section className="p-5">
