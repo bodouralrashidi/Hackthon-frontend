@@ -2,6 +2,7 @@ import { useRadioGroup } from "@material-ui/core";
 import { useState } from "react";
 import Card from "./components/CardNFV";
 import toast, { Toaster } from "react-hot-toast";
+import cardStore from "../pages/store/cardStore";
 
 function name(props) {
   const [cardData, setCardData] = useState({
@@ -31,6 +32,8 @@ function name(props) {
     if (props.userData.wallet >= cardData.balance && cardData.balance != "") {
       //fetch
       toast.success("Your card is ready!");
+      cardStore.createCard(cardData, "632edb56d8c3d0ba519db678");
+      setCardData(cardStore.cards);
     } else {
       //fetch
       toast.error("You Can't!");
