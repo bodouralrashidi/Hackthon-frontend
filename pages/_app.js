@@ -3,8 +3,14 @@ import "tailwindcss/tailwind.css";
 import Head from "next/head";
 import Sidebar from "./components/sidebar";
 import Header from "./components/Header";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
+  const [user, setUser] = useState(true);
+  useEffect(() => {}, []);
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -21,7 +27,11 @@ function MyApp({ Component, pageProps }) {
         <Sidebar />
         <div className="w-screen ">
           <Header />
-          <Component {...pageProps} />
+          {user ? (
+            <Component user={user} {...pageProps} />
+          ) : (
+            <div>Please login</div>
+          )}
         </div>
       </div>
     </>
